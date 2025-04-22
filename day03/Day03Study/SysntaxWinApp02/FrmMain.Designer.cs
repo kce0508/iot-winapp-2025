@@ -116,6 +116,7 @@
             Name = "FrmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "문법학습 윈앱02";
+            Load += FrmMain_Load;
             ((System.ComponentModel.ISupportInitialize)PicComputer).EndInit();
             ResumeLayout(false);
             PerformLayout();

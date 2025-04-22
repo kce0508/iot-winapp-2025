@@ -11,10 +11,7 @@ namespace SysntaxWinApp02
 
         private void BtnCheck_Click(object sender, EventArgs e)
         {
-            //Computer myCom = new Computer();
-            //Notebook myNotbook = new Notebook();
-            //Server yourServer = new Server();
-            //Computer yourCom = new Notebook();      // 부모 클래스에 자식 객체를 할당
+            //Computer myCom = new Computer();  // 부모 클래스에 자식 객체를 할당
             switch (CboDivision.SelectedIndex)
             {
                 case 0: // Computer
@@ -69,14 +66,14 @@ namespace SysntaxWinApp02
             server1.Name = "HP서버";
 
             // 얕은 복사 : 같은 내용 참조
-            Server server2 = server1;   
+            Server server2 = server1;
             server2.Name = "DELL서버";
 
-            bool isSame= server1.Equals(server2);
+            bool isSame = server1.Equals(server2);
             Console.WriteLine(isSame);
-            
+
             MessageBox.Show($"{server1.Name}\r\n{server2.Name}", "서버명");
-            
+
             // 깊은 복사 : 완전 다른 객체로 복사
             Server server3 = server1.DeepCopy();
             server3.Name = "INTEL서버";

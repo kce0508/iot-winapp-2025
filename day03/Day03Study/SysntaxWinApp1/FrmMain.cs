@@ -13,6 +13,7 @@ namespace SysntaxWinApp1
             Person hugo = new Person();
             hugo.Name = TxtName.Text.Trim();
             hugo.Age = int.Parse(TxtAge.Text.Trim());
+
             hugo.Gender = char.Parse(TxtGender.Text.Trim());
             hugo.Phone = TxtPhone.Text.Trim();
 

@@ -1,9 +1,11 @@
 ﻿// using... 네임스페이스 추가
 // C, C++ #include / Python import와 동일
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;   // 진단네임스페이스 Debug 클래스 포함
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,7 +36,7 @@ namespace SysntaxWinApp02
 
     // C++에서는 다중상속이 가능
     // Java, C#은 다중상속을 막음
-    internal class Notebook : Computer, IMobile
+    internal class Notebook : Computer, IMobile, IMessageFilter, IOrderedQueryable
     {
         public void call()
         {
@@ -59,6 +61,12 @@ namespace SysntaxWinApp02
         }
         bool fingerScan;    // 지문인식
 
+        public Type ElementType => throw new NotImplementedException();
+
+        public Expression Expression => throw new NotImplementedException();
+
+        public IQueryProvider Provider => throw new NotImplementedException();
+
         // 파라미터가 없는 메서드
         public bool HasFingerScanDevice() { return this.fingerScan; }
 
@@ -66,10 +74,18 @@ namespace SysntaxWinApp02
         public bool HasFingerScanDevice(bool fingerScan) 
         { 
             this.fingerScan = fingerScan;
-            Console.WriteLine();
             return this.fingerScan;
         }
 
+        public bool PreFilterMessage(ref Message m)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     internal class Server : Computer 
