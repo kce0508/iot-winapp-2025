@@ -2,6 +2,9 @@ using SyntaxWinApp01.Properties;
 
 namespace SyntaxWinApp01
 {
+    /// <summary>
+    /// 예외처리 학습
+    /// </summary>
     public partial class FrmMain : Form
     {
         public FrmMain()
@@ -18,7 +21,6 @@ namespace SyntaxWinApp01
                 person.Name = TxtName.Text.Trim();
                 // int -> 4byte 정수, decimal -> 16bytes 실수
                 // 큰 사이즈의 데이터형에 작은 사이즈 데이터형 값을 할당(묵시적형변환)
-                //person.Age = NudAge.Value;
                 person.Age = Convert.ToInt32(NudAge.Value);     // 이방식 더 선호
                 //person.Gender = char.Parse(TxtGender.Text.Trim());
                 person.Gender = Convert.ToChar(TxtGender.Text.Trim());
@@ -37,7 +39,7 @@ namespace SyntaxWinApp01
                 int x = 10, y = 0;
                 rval = x / y;
 
-                MessageBox.Show(rval.ToString());
+                //MessageBox.Show(rval.ToString());
             }
             catch (ArithmeticException ex)  // DivideByZeroException의 부모클래스를 사용해도 무방
             {
@@ -63,6 +65,7 @@ namespace SyntaxWinApp01
                             $"성별, {korGender}자\r\n" + 
                             $"폰번호, {person.Phone}";
             TxtResult.Text = result;
+
             if (person.Age > 0 && person.Age < 20)
             {
                 if (person.Gender == 'M')
