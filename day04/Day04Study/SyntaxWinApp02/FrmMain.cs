@@ -13,7 +13,7 @@ namespace SyntaxWinApp02
             // 배열 생성
             string[] fruits = { "사과", "바나나", "딸기", "망고", "블루베리" };
             CboArray.Items.AddRange(fruits);    // 배열을 콤보박스에 할당
-                                                //CboArray.SelectedIndex = 0;
+            //CboArray.SelectedIndex = 0;
 
             // 리스트 생성 - 둘중 어느 방법이든 사용가능
             List<string> lFruits = ["용과", "망고스틴", "애플망고", "자몽", "두리안"];
@@ -50,13 +50,15 @@ namespace SyntaxWinApp02
         {
             // SelectedItem 은 Object?
             string selected = CboArray.SelectedItem.ToString();
-            MessageBox.Show($"선택한 과일은 {selected}입니다", "좋아하는과일", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"선택한 과일은 {selected}입니다", "좋아하는과일", 
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void CboList_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selected = CboList.SelectedItem.ToString();
-            MessageBox.Show(selected, "선택된과일", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(selected, "선택된과일",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void CboDictionary_SelectedIndexChanged(object sender, EventArgs e)

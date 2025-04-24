@@ -63,10 +63,10 @@ namespace SyntaxWinApp03
         private void BtnLoad_Click(object sender, EventArgs e)
         {
             //string filePath = "sample.txt"; // 읽어올 파일
-            // 3. OpenFileDialog 사용 // doc, docx는 실제 로드 불가
+            // 3. OpenFileDialog 사용 
             DlgOpen.FileName = string.Empty;    // == "";
-            DlgOpen.Filter = "RTF파일 (*.rtf)|*.rtf| 워드파일 (*.doc)|*.doc";
-            DlgOpen.Title = "RTF파일 읽기";
+            DlgOpen.Filter = "RTF파일 (*.rtf)|*.rtf|Txt파일 (*.txt)|*.txt";
+            DlgOpen.Title = "문서파일 읽기";
 
             // 다이얼로그창 열기(DialogResult.OK), 취소(DialogResult.Cancel)
             if (DlgOpen.ShowDialog() == DialogResult.OK)
