@@ -1,4 +1,4 @@
-﻿namespace SyntaxWinApp01
+﻿namespace SyntaxWinApp02
 {
     partial class FrmMain
     {
@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             BtnCheck = new Button();
-            label1 = new Label();
             TxtLog = new TextBox();
+            TxtTest = new TextBox();
+            BtnGeneric = new Button();
             SuspendLayout();
             // 
             // BtnCheck
@@ -43,39 +44,44 @@
             BtnCheck.UseVisualStyleBackColor = true;
             BtnCheck.Click += BtnCheck_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(71, 15);
-            label1.TabIndex = 1;
-            label1.Text = "이벤트 순서";
-            // 
             // TxtLog
             // 
-            TxtLog.Location = new Point(12, 27);
+            TxtLog.Location = new Point(12, 12);
             TxtLog.Multiline = true;
             TxtLog.Name = "TxtLog";
-            TxtLog.Size = new Size(560, 236);
-            TxtLog.TabIndex = 2;
+            TxtLog.Size = new Size(560, 251);
+            TxtLog.TabIndex = 1;
+            // 
+            // TxtTest
+            // 
+            TxtTest.Location = new Point(12, 276);
+            TxtTest.Name = "TxtTest";
+            TxtTest.Size = new Size(200, 23);
+            TxtTest.TabIndex = 2;
+            // 
+            // BtnGeneric
+            // 
+            BtnGeneric.Location = new Point(366, 269);
+            BtnGeneric.Name = "BtnGeneric";
+            BtnGeneric.Size = new Size(100, 30);
+            BtnGeneric.TabIndex = 3;
+            BtnGeneric.Text = "제네릭";
+            BtnGeneric.UseVisualStyleBackColor = true;
+            BtnGeneric.Click += BtnGeneric_Click;
             // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(584, 311);
+            Controls.Add(BtnGeneric);
+            Controls.Add(TxtTest);
             Controls.Add(TxtLog);
-            Controls.Add(label1);
             Controls.Add(BtnCheck);
             Name = "FrmMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "대리자학습 윈앱";
-            Activated += FrmMain_Activated;
-            FormClosing += FrmMain_FormClosing;
-            FormClosed += FrmMain_FormClosed;
+            Text = "고급학습 윈앱";
             Load += FrmMain_Load;
-            Shown += FrmMain_Shown;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -83,7 +89,8 @@
         #endregion
 
         private Button BtnCheck;
-        private Label label1;
         private TextBox TxtLog;
+        private TextBox TxtTest;
+        private Button BtnGeneric;
     }
 }
