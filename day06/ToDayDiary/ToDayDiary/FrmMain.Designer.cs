@@ -37,14 +37,19 @@
             label1 = new Label();
             CalSchedule = new MonthCalendar();
             groupBox2 = new GroupBox();
-            BtnOpenImage = new Button();
-            pictureBox1 = new PictureBox();
+            RtbNote = new RichTextBox();
             BtnSave = new Button();
-            textBox1 = new TextBox();
+            BtnOpenImage = new Button();
+            PicImage = new PictureBox();
             DlgOpenImage = new OpenFileDialog();
+            PicBox = new GroupBox();
+            DlgSave = new SaveFileDialog();
+            BtnLoad = new Button();
+            DlgOpen = new OpenFileDialog();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PicImage).BeginInit();
+            PicBox.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -58,7 +63,7 @@
             groupBox1.Controls.Add(CalSchedule);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(330, 477);
+            groupBox1.Size = new Size(330, 243);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "스케줄";
@@ -86,7 +91,7 @@
             // 
             // BtnCheck
             // 
-            BtnCheck.Location = new Point(234, 215);
+            BtnCheck.Location = new Point(234, 210);
             BtnCheck.Name = "BtnCheck";
             BtnCheck.Size = new Size(90, 25);
             BtnCheck.TabIndex = 3;
@@ -96,7 +101,7 @@
             // 
             // DtpBirth
             // 
-            DtpBirth.Location = new Point(12, 215);
+            DtpBirth.Location = new Point(12, 210);
             DtpBirth.Name = "DtpBirth";
             DtpBirth.Size = new Size(200, 23);
             DtpBirth.TabIndex = 2;
@@ -120,62 +125,88 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(BtnOpenImage);
-            groupBox2.Controls.Add(pictureBox1);
+            groupBox2.Controls.Add(BtnLoad);
+            groupBox2.Controls.Add(RtbNote);
             groupBox2.Controls.Add(BtnSave);
-            groupBox2.Controls.Add(textBox1);
             groupBox2.Location = new Point(348, 12);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(330, 477);
+            groupBox2.Size = new Size(330, 486);
             groupBox2.TabIndex = 0;
             groupBox2.TabStop = false;
-            groupBox2.Text = "일기장";
+            groupBox2.Text = "오늘의 일기";
             // 
-            // BtnOpenImage
+            // RtbNote
             // 
-            BtnOpenImage.Location = new Point(224, 218);
-            BtnOpenImage.Name = "BtnOpenImage";
-            BtnOpenImage.Size = new Size(100, 25);
-            BtnOpenImage.TabIndex = 3;
-            BtnOpenImage.Text = "이미지열기";
-            BtnOpenImage.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = SystemColors.GradientInactiveCaption;
-            pictureBox1.Location = new Point(6, 22);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(318, 190);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            RtbNote.Location = new Point(6, 22);
+            RtbNote.Name = "RtbNote";
+            RtbNote.Size = new Size(318, 427);
+            RtbNote.TabIndex = 2;
+            RtbNote.Text = "";
             // 
             // BtnSave
             // 
-            BtnSave.Location = new Point(224, 446);
+            BtnSave.Location = new Point(118, 455);
             BtnSave.Name = "BtnSave";
             BtnSave.Size = new Size(100, 25);
             BtnSave.TabIndex = 1;
             BtnSave.Text = "저장";
             BtnSave.UseVisualStyleBackColor = true;
+            BtnSave.Click += BtnSave_Click;
             // 
-            // textBox1
+            // BtnOpenImage
             // 
-            textBox1.Location = new Point(6, 249);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ScrollBars = ScrollBars.Vertical;
-            textBox1.Size = new Size(318, 190);
-            textBox1.TabIndex = 0;
+            BtnOpenImage.Location = new Point(224, 212);
+            BtnOpenImage.Name = "BtnOpenImage";
+            BtnOpenImage.Size = new Size(100, 25);
+            BtnOpenImage.TabIndex = 3;
+            BtnOpenImage.Text = "이미지열기";
+            BtnOpenImage.UseVisualStyleBackColor = true;
+            BtnOpenImage.Click += BtnOpenImage_Click;
+            // 
+            // PicImage
+            // 
+            PicImage.BackColor = SystemColors.GradientInactiveCaption;
+            PicImage.Location = new Point(6, 22);
+            PicImage.Name = "PicImage";
+            PicImage.Size = new Size(318, 184);
+            PicImage.TabIndex = 2;
+            PicImage.TabStop = false;
             // 
             // DlgOpenImage
             // 
             DlgOpenImage.FileName = "openFileDialog1";
             // 
+            // PicBox
+            // 
+            PicBox.Controls.Add(BtnOpenImage);
+            PicBox.Controls.Add(PicImage);
+            PicBox.Location = new Point(12, 256);
+            PicBox.Name = "PicBox";
+            PicBox.Size = new Size(330, 243);
+            PicBox.TabIndex = 1;
+            PicBox.TabStop = false;
+            PicBox.Text = "오늘하루";
+            // 
+            // BtnLoad
+            // 
+            BtnLoad.Location = new Point(224, 455);
+            BtnLoad.Name = "BtnLoad";
+            BtnLoad.Size = new Size(100, 25);
+            BtnLoad.TabIndex = 1;
+            BtnLoad.Text = "읽기";
+            BtnLoad.UseVisualStyleBackColor = true;
+            BtnLoad.Click += BtnLoad_Click;
+            // 
+            // DlgOpen
+            // 
+            DlgOpen.FileName = "openFileDialog1";
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(684, 494);
+            ClientSize = new Size(684, 505);
+            Controls.Add(PicBox);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "FrmMain";
@@ -183,8 +214,8 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PicImage).EndInit();
+            PicBox.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -197,12 +228,16 @@
         private Label label1;
         private MonthCalendar CalSchedule;
         private Button BtnSave;
-        private TextBox textBox1;
         private TextBox TxtDay;
         private TextBox TxtMonth;
         private TextBox TxtYear;
         private Button BtnOpenImage;
-        private PictureBox pictureBox1;
+        private PictureBox PicImage;
         private OpenFileDialog DlgOpenImage;
+        private GroupBox PicBox;
+        private RichTextBox RtbNote;
+        private SaveFileDialog DlgSave;
+        private Button BtnLoad;
+        private OpenFileDialog DlgOpen;
     }
 }
