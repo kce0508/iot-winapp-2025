@@ -37,6 +37,7 @@
             label1 = new Label();
             CalSchedule = new MonthCalendar();
             groupBox2 = new GroupBox();
+            BtnLoad = new Button();
             RtbNote = new RichTextBox();
             BtnSave = new Button();
             BtnOpenImage = new Button();
@@ -44,7 +45,6 @@
             DlgOpenImage = new OpenFileDialog();
             PicBox = new GroupBox();
             DlgSave = new SaveFileDialog();
-            BtnLoad = new Button();
             DlgOpen = new OpenFileDialog();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -94,7 +94,7 @@
             BtnCheck.Location = new Point(234, 210);
             BtnCheck.Name = "BtnCheck";
             BtnCheck.Size = new Size(90, 25);
-            BtnCheck.TabIndex = 3;
+            BtnCheck.TabIndex = 1;
             BtnCheck.Text = "확인";
             BtnCheck.UseVisualStyleBackColor = true;
             BtnCheck.Click += BtnCheck_Click;
@@ -135,12 +135,23 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "오늘의 일기";
             // 
+            // BtnLoad
+            // 
+            BtnLoad.Location = new Point(224, 455);
+            BtnLoad.Name = "BtnLoad";
+            BtnLoad.Size = new Size(100, 25);
+            BtnLoad.TabIndex = 5;
+            BtnLoad.Text = "읽기";
+            BtnLoad.UseVisualStyleBackColor = true;
+            BtnLoad.Click += BtnLoad_Click;
+            // 
             // RtbNote
             // 
             RtbNote.Location = new Point(6, 22);
             RtbNote.Name = "RtbNote";
+            RtbNote.ScrollBars = RichTextBoxScrollBars.ForcedVertical;
             RtbNote.Size = new Size(318, 427);
-            RtbNote.TabIndex = 2;
+            RtbNote.TabIndex = 3;
             RtbNote.Text = "";
             // 
             // BtnSave
@@ -148,7 +159,7 @@
             BtnSave.Location = new Point(118, 455);
             BtnSave.Name = "BtnSave";
             BtnSave.Size = new Size(100, 25);
-            BtnSave.TabIndex = 1;
+            BtnSave.TabIndex = 4;
             BtnSave.Text = "저장";
             BtnSave.UseVisualStyleBackColor = true;
             BtnSave.Click += BtnSave_Click;
@@ -158,7 +169,7 @@
             BtnOpenImage.Location = new Point(224, 212);
             BtnOpenImage.Name = "BtnOpenImage";
             BtnOpenImage.Size = new Size(100, 25);
-            BtnOpenImage.TabIndex = 3;
+            BtnOpenImage.TabIndex = 2;
             BtnOpenImage.Text = "이미지열기";
             BtnOpenImage.UseVisualStyleBackColor = true;
             BtnOpenImage.Click += BtnOpenImage_Click;
@@ -186,16 +197,6 @@
             PicBox.TabIndex = 1;
             PicBox.TabStop = false;
             PicBox.Text = "오늘하루";
-            // 
-            // BtnLoad
-            // 
-            BtnLoad.Location = new Point(224, 455);
-            BtnLoad.Name = "BtnLoad";
-            BtnLoad.Size = new Size(100, 25);
-            BtnLoad.TabIndex = 1;
-            BtnLoad.Text = "읽기";
-            BtnLoad.UseVisualStyleBackColor = true;
-            BtnLoad.Click += BtnLoad_Click;
             // 
             // DlgOpen
             // 
