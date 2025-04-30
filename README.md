@@ -15,9 +15,9 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
 #### C# 이란?
 - C#(씨샵) : **마이크로소프트**가 개발한 객체지향 프로그래밍 언어
-    - 1990년, 귀도 반 로섬이 Python을 개발
-    - 1985년, 바야네 스트롭스트룹이 C++을 개발(너무 어려움)
-    - 1995년, 제임스 고슬링이 Java를 개발(C++의 문법을 기반, 좀 더 쉬운 언어)
+    - 1991년, 귀도 반 로섬이 Python을 개발(1989년 시작)
+    - 1985년, 바야네 스트롭스트룹이 C++을 개발(너무 어려움, 1980년 초반 개발 시작)
+    - 1995년, 제임스 고슬링이 Java를 개발(C++의 문법을 기반, 좀 더 쉬운 언어, 1991년 개발 시작)
     - MS가 썬 마이크로시스템즈와 라이센스 채결 후 MS용 Java인 J++를 개발. 특허권 소송 발생
     - 1999년, 파스칼, 델파이를 개발한 `엔더스 헤일스버그`가 C++, Java를 기반으로 C#을 개발
     - 2000년, C# 발표
@@ -63,9 +63,7 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 - .NET Core와 .NET Framework가 혼용
 - 2020년 .NET Core와 .NET Framework를 통합해서 .NET 5.0 공표. 이 이후부터 Framework. Core 이름 사라짐
 - C# 버전과 .NET 버전 숫자 차이나기 시작
-
 - .NET 데스크톱 개발을 설치하면 C#, Visual Basic, F# 등 여러 언어를 사용가능
-
 - `C# 12.0`, `.NET 8`, `Visual Studio 2022` Coummunity Edition에서 학습
 
 ## 2일차
@@ -181,7 +179,7 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
 15. 두 개 이상의 컨트롤 선택 후 Ctrl키 누른 상태에서 드래그하면 그룹으로 복사
 
-### 윈앱 컨트롤 - tabindex
+### 윈앱 컨트롤1
 -` Button` : 마우스 클릭위한 컨트롤
     - 보통 Btn~ 로 시작
     - `(Name)` : 소스코드상에서 접근, 사용
@@ -207,8 +205,8 @@ IoT 개발자 C#/WinApp 리포지토리 2025
         - Fixed3D : 입체감있는 테두리
     - MaxLength : 최대 몇자까지 적을 수 있는지
     - PasswordChar : 들어가는 텍스트를 암호처럼 숨길때 사용. 보통 ㅁ한자키 특수문자 ■ 를 사용
-    - Multiline : 여러줄 사용 여부
-    - Placeholder Text : 입력전 어떤 입력내용 표시
+    - Multiline : 여러줄 사용 여부. true가 되어야 높이 조절 가능
+    - Placeholder Text : 입력전 입력내용 표시
     - ReadOnly : 입력을 가능 여부, true는 입력불가
     - **TextCanged** : 글자가 변경되면 발생하는 이벤트
     - **KeyPress** : 키보드 입력이 생기면 발생하는 이벤트
@@ -306,7 +304,7 @@ IoT 개발자 C#/WinApp 리포지토리 2025
     - Button 컨트롤과 속성 동일
     - Mask : 사용자에게 입력제약할 포맷
 
-- GroupBox : 관련있는 컨트롤들을 묶어주는 컨트롤
+- `GroupBox` : 관련있는 컨트롤들을 묶어주는 컨트롤
     - 이름을 절대 바꾸지 않음
     - Button 컨트롤과 속성 동일
     - Text 속성만 사용
@@ -316,7 +314,7 @@ IoT 개발자 C#/WinApp 리포지토리 2025
         - 속성 Image : ... 버튼
         - 리소스 선택 > 로컬 리소스 > 가져오기
         - FrmMain.resx에 저장
-    2. 폼위에 ImageList 컨트롤 사용
+    2. 폼위에 `ImageList` 컨트롤 사용
         - 도구 상자 ImageList 컨트롤 드래그
         - 폼에 표현되는 컨트롤 아님
         - 이미지 사이즈를 개발자 조정가능
@@ -339,11 +337,11 @@ IoT 개발자 C#/WinApp 리포지토리 2025
     - SizeMode : 들어가는 이미지 사이즈 형태
         - Normal : 큰 이미지는 잘려서 나옴
         - StretchImage : 픽쳐박스 크기에 맞춰서 표시
-        - AutoSize : 자동사이즈(?)
-        - CenterImage : 작은이미지를 중앙에 표시
+        - AutoSize : 이미지 크기에 픽쳐박스 크기 조정
+        - CenterImage : 작은이미지를 중앙에 표시. 잘림
         - Zoom : 확대표시(?)
     - 들어갈 이미지의 속성
-        - 출력 디렉토리로 복사 : 
+        - 출력 디렉토리로 복사 : 항상 복사 변경
 
 ### 윈앱 개발기능
 1. Debug - 디버깅시 필요한 기능 담은 클래스
@@ -598,7 +596,7 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
         ```
 
-    5. 제네릭
+    5. 제네릭 : Generic
         - 파이썬에는 필요 없음 -> 타입지정이 자유로움
         - Java, C# 등의 데이터타입 객체지향언어에 반드시 필요
 
@@ -689,7 +687,7 @@ IoT 개발자 C#/WinApp 리포지토리 2025
     - SelectedIndexChanged : 아이템 선택이 변경될때 이벤트 발생
 
 - `MonthCalender` : 스케줄 등록을 위한 컨트롤
-    - Car~ 로 이름 사용
+    - Cal~ 로 이름 사용
     - FirstDayOfWeek : 한주 시작일을 설정. default는 일요일부터
     - DataChanged : 기본 이벤트, 날짜 변경시 발생
 
@@ -863,7 +861,7 @@ IoT 개발자 C#/WinApp 리포지토리 2025
         1. 컬렉션을 생성해서 데이터를 컨트롤에 할당
         2. DB에서 데이터 가져온뒤 컨트롤에 할당
     - 바인딩 방식
-        1. 직접코드 할당 방식
+        1. 직접코드 할당 방식(전통적 방식)
             - CboCollection.ItemsSource = fruitItems
             - 기존 윈앱 방식과 동일
             - 메모리에 있는 fruitItems 데이터를 대입(할당)
@@ -935,13 +933,14 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
     - ResourceDictionary - [소스](./day08/Day08Study/WpfStudyApp04/App.xaml)
         - App.xaml 리소스를 계속 추가하면 유지보수가 어려워짐. 대안으로 리소스 사전 생성
-    - 참조 깃허브 https://github.com/StanislawSwierc/WpfThemesCollection
+    - 참조 깃허브 - https://github.com/StanislawSwierc/WpfThemesCollection
 
     <img src="./image/cs0019.png" width="600">
 
-### MahApps.Metro 라이브러리
+### MahApps.Metro 프레임워크
 - 공식 사이트 - https://mahapps.com/
     - 최소한 노력으로 Metro UI/Mordern UI를 적용시킬 수 있는 프레임워크
+    - 2011년 개발 시작
     - Metro UI, Modern UI - MS에서 시작한 디자인 스타일 
     - 깔끔하고 입체감을 최소화 시킴
 
@@ -954,7 +953,21 @@ IoT 개발자 C#/WinApp 리포지토리 2025
     3. https://github.com/MahApps/IconPacks.Browser
         - IconPacks.Browser-net8-v2.0.0.zip 다운로드
     4. App.xaml에 필요한 리소스 코드 복붙
-    5. MainWindow.xaml
+
+        ```xml
+        <Application.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+                    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                    <!-- Theme setting -->
+                    <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Application.Resources>
+        ```
+    5. MainWindow.xaml.cs
         - Window -> MetroWindow 변경
     6. MainWindow.xaml
         - mah 네임스페이스 추가
@@ -975,8 +988,68 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
 ## 9일차
 
-### C# 응용 - WPF
-- WPF 기본
+### MahApps.Metro 프레임워크
+- 컨트롤 사용법 - [소스](./day09/Day09Study/WpfStudyApp05/MainWindow.xaml)
+    - ProgressBar, MetroProgressBar, ProgressRing
+    - TabControl
+
+### VS Tip
+- 프로젝트는 제거해도 폴더와 파일은 그대로 존재
+    - 윈도우 탐색기에서 폴더 삭제요망
+
+### WPF UI 프레임워크
+- 개요
+    - Fluent UI라 이름의 Modern UI의 한 스타일 UI 프레임워크
+    - 2021년 1.0 배포, 현재 버전 4.0.2
+
+- 기본 사용법 - [소스](./day09/Day09Study/WpfStudyApp07/MainWindow.xaml)
+    - NuGet 패키지 관리자 > WPF-UI 검색 후 설치
+    - VS Extension for WPF UI 
+        - 메뉴 확장 > 확장관리
+        - WPF-UI 검색 후 설치
+        - VS 종료
+        - VSIS Installer 시작 > Modify
+    - VS Project > WPF UI 프로젝트 선택
+    - MainWindow.xaml을 추가 생성
+    - App.xaml.cs 오픈 - [소스](./day09/Day09Study/WpfStudyApp07/App.xaml.cs)
+        ```cs
+        private static readonly IHost _host = Host
+            .CreateDefaultBuilder()
+            .ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(AppContext.BaseDirectory)); })
+            .ConfigureServices((context, services) =>
+            {
+                throw new NotImplementedException("No service or window was registered.");
+            }).Build();
+
+        private async void OnStartup(object sender, StartupEventArgs e)
+        {
+            await _host.StartAsync();
+            // MainWindow 인스턴스 생성
+            var mainWindow = _host.Services.GetRequiredService<MainWindow>();
+            mainWindow.Show();
+        }
+        ```
+    - MainWindow.xaml xmlns:ui 추가. App.xaml과 동일
+        ```xml
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        ```
+    - MainWindow.xaml Window -> ui:FluentWindow 변경
+    - Grid 내 타이틀바 추가
+        ```xml
+        <ui:TitleBar Title="WPF UI App" />
+        ```
+    - Theme를 Dark로 했을 경우
+        - Window 전체 Background를 어두운색으로 지정 후 작업 
+
+    - 실행결과
+
+        <img src="./image/cs0022.png" width="600">
+
+        [Dark Theme]
+
+        <img src="./image/cs0023.png" width="600">
+
+        [Light Theme]
 
 ## 10일차
 
