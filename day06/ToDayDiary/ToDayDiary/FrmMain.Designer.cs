@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             groupBox1 = new GroupBox();
             TxtDay = new TextBox();
             TxtMonth = new TextBox();
@@ -206,10 +207,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(684, 505);
+            ClientSize = new Size(685, 505);
             Controls.Add(PicBox);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmMain";
             Text = "Diary";
             groupBox1.ResumeLayout(false);
