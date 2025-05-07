@@ -34,7 +34,7 @@
             TxtMonth = new TextBox();
             TxtYear = new TextBox();
             BtnCheck = new Button();
-            DtpBirth = new DateTimePicker();
+            DtpDateCheck = new DateTimePicker();
             label1 = new Label();
             CalSchedule = new MonthCalendar();
             groupBox2 = new GroupBox();
@@ -59,7 +59,7 @@
             groupBox1.Controls.Add(TxtMonth);
             groupBox1.Controls.Add(TxtYear);
             groupBox1.Controls.Add(BtnCheck);
-            groupBox1.Controls.Add(DtpBirth);
+            groupBox1.Controls.Add(DtpDateCheck);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(CalSchedule);
             groupBox1.Location = new Point(12, 12);
@@ -100,13 +100,13 @@
             BtnCheck.UseVisualStyleBackColor = true;
             BtnCheck.Click += BtnCheck_Click;
             // 
-            // DtpBirth
+            // DtpDateCheck
             // 
-            DtpBirth.Location = new Point(12, 210);
-            DtpBirth.Name = "DtpBirth";
-            DtpBirth.Size = new Size(200, 23);
-            DtpBirth.TabIndex = 2;
-            DtpBirth.ValueChanged += DtpBirth_ValueChanged;
+            DtpDateCheck.Location = new Point(12, 210);
+            DtpDateCheck.Name = "DtpDateCheck";
+            DtpDateCheck.Size = new Size(200, 23);
+            DtpDateCheck.TabIndex = 2;
+            DtpDateCheck.ValueChanged += DtpDateCheck_ValueChanged;
             // 
             // label1
             // 
@@ -213,6 +213,7 @@
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Diary";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -227,7 +228,7 @@
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private Button BtnCheck;
-        private DateTimePicker DtpBirth;
+        private DateTimePicker DtpDateCheck;
         private Label label1;
         private MonthCalendar CalSchedule;
         private Button BtnSave;

@@ -36,11 +36,6 @@ namespace ToDayDiary
             }
         }
 
-        private void DtpBirth_ValueChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show(DtpBirth.Value.ToString(), "생일", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
         private void BtnCheck_Click(object sender, EventArgs e)
         {
             // 오늘 날짜로 캘린더 설정
@@ -136,6 +131,19 @@ namespace ToDayDiary
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void DtpDateCheck_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime selectedDate = DtpDateCheck.Value;
+
+            // 평일/주말 판별
+            string dayType = (selectedDate.DayOfWeek == DayOfWeek.Saturday || selectedDate.DayOfWeek == DayOfWeek.Sunday)
+                ? "주말입니다."
+                : "평일입니다.";
+
+            // 메시지 출력
+            MessageBox.Show(dayType, "요일 확인", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
