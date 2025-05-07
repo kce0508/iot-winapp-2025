@@ -1077,5 +1077,6 @@ IoT 개발자 C#/WinApp 리포지토리 2025
         - 원하는 이미지를 불러와서 오늘 하루를 표현할 수 있는 이미지를 넣을 수 있다.
         - 작성한 일기를 저장하고 또 저장한 파일을 불러와서 읽을 수 있다.
 
+https://github.com/user-attachments/assets/8618dbb9-86eb-4da5-97af-a839eb455e30
 
 ### 코딩테스트
